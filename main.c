@@ -8,14 +8,12 @@ typedef struct _data1
     int num_int;
 } data1;
 
-#define not_in_mem 12
-
 void func1 (data1 *data, int index, int val)
 {
     
     if (index >= data->num_int)
     {
-        errno = not_in_mem; // Not in allocated memory
+        errno = ENOMEM; // Not in allocated memory
     }
     else
     {
